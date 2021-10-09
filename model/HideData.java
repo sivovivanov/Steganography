@@ -1,7 +1,12 @@
-import javax.imageio.ImageIO;
-import java.awt.image.BufferedImage;
-import java.awt.image.DataBufferByte;
-import java.io.*;
+package model;
+
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
 import java.util.Arrays;
 import java.util.Scanner;
 
@@ -120,20 +125,6 @@ public class HideData {
             e.printStackTrace();
         }
 
-    }
-
-    public static void main(String[] args){
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Input name of cover image");
-        String cover = scanner.nextLine();
-        while(!cover.contains(".bmp")){
-            System.out.println("Enter valid input");
-            cover = scanner.nextLine();
-        }
-        System.out.println("Input name of payload");
-        String payload = scanner.nextLine();
-        byte[] ans = hideData(cover.trim(), payload.trim());
-        writeImage(ans);
     }
 }
 

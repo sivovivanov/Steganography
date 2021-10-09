@@ -1,8 +1,15 @@
-import java.io.*;
-import java.nio.charset.StandardCharsets;
-import java.util.Arrays;
+package model;
 
 import static java.lang.Math.pow;
+
+import java.io.BufferedInputStream;
+import java.io.File;
+import java.io.FileInputStream;
+import java.io.FileNotFoundException;
+import java.io.FileOutputStream;
+import java.io.IOException;
+import java.io.InputStream;
+import java.nio.charset.StandardCharsets;
 
 public class ExtractData {
     static String extention;
@@ -84,9 +91,4 @@ public class ExtractData {
     public static String getExtenstion(){
         return extention;
     }
-
-    public static void main(String[] args){
-        rebuildPayload(extractData(readImage("output.bmp")), getExtenstion());
-    }
-
 }
